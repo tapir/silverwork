@@ -6,7 +6,7 @@ set -ouex pipefail
 KERNEL_VERSION="$(rpm -q "kernel-cachyos-lto" --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}')"
 
 # Necessary packages to compile kmod
-dnf install -y --setopt=install_weak_deps=False akmods gcc-c++
+dnf install -y --setopt=install_weak_deps=False akmods
 
 # Add Negativo17 repo
 curl -fLsS --retry 5 -o /etc/yum.repos.d/fedora-nvidia.repo https://negativo17.org/repos/fedora-nvidia.repo
@@ -19,7 +19,7 @@ dnf install -y --setopt=install_weak_deps=False --setopt=tsflags=noscripts akmod
 akmods --force --kernels "${KERNEL_VERSION}" --kmod "nvidia"
 
 # Check if everything went ok
-modinfo -l /usr/lib/modules/${KERNEL_VERSION}/extra/nvidia/nvidia{,-drm,-modeset,-peermem,-uvm}.ko.xz
+modinfo /usr/lib/modules/${KERNEL_VERSION}/extra/nvidia/nvidia{,-drm,-modeset,-peermem,-uvm}.ko.xz > /dev/null || (cat "/var/cache/akmods/nvidia/*.failed.log" && exit 1)
 
 # Install userspace with multilibs
 dnf install -y --setopt=install_weak_deps=False \
@@ -56,4 +56,4 @@ rm -f /etc/yum.repos.d/nvidia-container-toolkit.repo
 rm -f /etc/yum.repos.d/fedora-nvidia.repo
 
 # Cleanup
-dnf remove -y akmod-nvidia akmods gcc-c++
+dnf remove -y akmod-nvidia akmods
