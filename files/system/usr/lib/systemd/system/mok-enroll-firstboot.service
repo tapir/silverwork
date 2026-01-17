@@ -1,0 +1,15 @@
+[Unit]
+Description=Enroll Silvercachy MOK on first boot
+ConditionPathExists=/usr/share/silvercachy/MOK.der
+ConditionPathExists=!/var/lib/silvercachy/.mok-enrolled
+After=local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh -c '(echo "silvercachy"; echo "silvercachy") | mokutil --import /usr/share/silvercachy/MOK.der'
+ExecStartPost=/usr/bin/mkdir -p /var/lib/silvercachy
+ExecStartPost=/usr/bin/touch /var/lib/silvercachy/.mok-enrolled
+
+[Install]
+WantedBy=multi-user.target

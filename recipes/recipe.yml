@@ -59,6 +59,12 @@ modules:
     snippets:
       - cp /usr/lib/modprobe.d/nvidia-modeset.conf /etc/modprobe.d/nvidia-modeset.conf
 
+  # Firstboot MOK enroll
+  - type: systemd
+    system:
+      enabled:
+        - mok-enroll-firstboot.service
+
   # Sign kernel and modules
   - type: script
     env:

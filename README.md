@@ -1,13 +1,32 @@
-# silvercachy &nbsp; [![bluebuild build badge](https://github.com/tapir/silvercachy/actions/workflows/build.yml/badge.svg)](https://github.com/tapir/silvercachy/actions/workflows/build.yml)
+# SilverCachy &nbsp; [![bluebuild build badge](https://github.com/tapir/silvercachy/actions/workflows/build.yml/badge.svg)](https://github.com/tapir/silvercachy/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+A `BlueBuild` image based on their `fedora-silverblue-main` image. It mainly adds the `CachyOS ThinLTO` kernel and builds `Nvidia` for it.
+Kernel and the modules are signed with my MOK key which will be automatically enrolled after the first boot. Use password `silvercachy` when asked.
 
-After setup, it is recommended you update this README to describe your custom image.
+## Changes
+
+- Remove packages:
+  - `firefox`
+  - `firefox-langpacks`
+  - `htop`
+  - `nvtop`
+  - `gnome-software`
+  - `gnome-tour`
+  - `ptyxis`
+  - `gnome-system-monitor`
+  - `malcontent-control`
+  - `gnome-disk-utility`
+  - `gnome-color-manager`
+  - `yelp`
+- Install `Bazaar` (App Store) and `Ptyxis` (Terminal) at firstboot to have a minimal set of applications where you can install other applications
+- Install `CachyOS-LTO` kernel
+- Install latest `Nvidia` drivers from Negativo17
+- Enroll `silvercachy` MOK
+- Sign kernel and modules
+- **TODO:** Install `CachyOS Addons`
+- **TODO:** Make use of more `BlueBuild` modules like `akmods` instead of custom scripts
 
 ## Installation
-
-> [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
 
 To rebase an existing atomic Fedora installation to the latest build:
 
@@ -29,10 +48,6 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
-
-## ISO
-
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
 
 ## Verification
 
