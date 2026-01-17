@@ -12,7 +12,6 @@ dnf install -y --setopt=install_weak_deps=False \
     xorg-x11-drv-nvidia-cuda-libs.i686 \
     xorg-x11-drv-nvidia-libs.i686 \
     pciutils-libs.i686
-dnf remove -y akmod-nvidia
 
 # Add Nvidia container support
 curl -fLsS --retry 5 -o /etc/yum.repos.d/nvidia-container-toolkit.repo https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo
