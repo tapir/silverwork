@@ -26,7 +26,7 @@ Kernel and the modules are signed with my MOK key which will be automatically en
   - `cachyos-settings`
   - `scx-scheds`
   - `scx-tools`
-- Replace `tuned` with `powerpower-profiles-daemon`
+- Replace `tuned` with `power-profiles-daemon`
 
 ## Installation
 
