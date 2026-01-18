@@ -5,7 +5,7 @@ Kernel and the modules are signed with my MOK key which will be automatically en
 
 ## Changes
 
-- Remove packages:
+- Remove:
   - `firefox`
   - `firefox-langpacks`
   - `htop`
@@ -18,13 +18,15 @@ Kernel and the modules are signed with my MOK key which will be automatically en
   - `gnome-disk-utility`
   - `gnome-color-manager`
   - `yelp`
+- Install:
+  - `Bazaar` flatpak (App Store)
+  - `Ptyxis` flatpak (Terminal)
+  - `kernel-cachyos-lto` kernel
+  - `Nvidia` drivers from Negativo17
+  - `cachyos-settings`
+  - `scx-scheds`
+  - `scx-tools`
 - Replace `tuned` with `powerpower-profiles-daemon`
-- Install `Bazaar` (App Store) and `Ptyxis` (Terminal) at firstboot to have a minimal set of applications where you can install other applications
-- Install `CachyOS-LTO` kernel
-- Install latest `Nvidia` drivers from Negativo17
-- Install `CachyOS Addons`
-- Enroll `silvercachy` MOK
-- Sign kernel and modules
 - **TODO:** Make use of more `BlueBuild` modules like `akmods` instead of custom scripts
 
 ## Installation
