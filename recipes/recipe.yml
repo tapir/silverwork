@@ -4,6 +4,7 @@ name: silvercachy
 description: Silverblue image based on BlueBuild's base images with CachyOS kernel and Nvidia
 base-image: ghcr.io/blue-build/base-images/fedora-silverblue
 image-version: 43
+
 modules:
   # Copy necessary system files
   - type: files
@@ -39,26 +40,11 @@ modules:
           - app.devsuite.Ptyxis
       - scope: user
 
-  # Replace the Fedora kernel with the CachyOS
-  - type: script
-    scripts:
-      - kernel.sh
-
-  # Compile kernel module and install Nvidia userspace packages and settings
-  - type: script
-    scripts:
-      - nvidia.sh
-
-  # Setup for Nvidia
-  - type: kargs
-    kargs:
-      - rd.driver.blacklist=nouveau
-      - modprobe.blacklist=nouveau
-      - nvidia-drm.modeset=1
-      - nvidia-drm.fbdev=1
-  
-  #CachyOS Addons
+  # CachyOS Addons
   - from-file: cachyos.yml
+  
+  # Nvidia modules and userspace
+  - from-file: nvidia.yml
 
   # Firstboot MOK enroll
   - type: systemd
