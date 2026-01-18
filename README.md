@@ -33,17 +33,12 @@ Kernel and the modules are signed with my MOK key which will be automatically en
 ## Installation
 
 - Disable `secureboot` from BIOS and boot to an atomic distro
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
+- Switch to the latest image
   ```
   bootc switch ghcr.io/tapir/silvercachy:latest
   systemctl reboot
   ```
 - Accept MOK key enrollment with password `scachy`
-- Then rebase to the signed image:
-  ```
-  bootc switch --enforce-container-sigpolicy ghcr.io/tapir/silvercachy:latest
-  systemctl reboot
-  ```
 - Enable `secureboot` back
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
