@@ -29,6 +29,10 @@ modules:
         - gnome-disk-utility
         - gnome-color-manager
         - yelp
+    install:
+      skip-unavailable: true
+      packages:
+        - gamemode
 
   # Minimal set of apps to be able to install other apps
   - type: default-flatpaks
