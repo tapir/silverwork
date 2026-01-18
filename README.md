@@ -35,19 +35,13 @@ Kernel and the modules are signed with my MOK key which will be automatically en
 - Disable `secureboot` from BIOS and boot to an atomic distro
 - First rebase to the unsigned image, to get the proper signing keys and policies installed:
   ```
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/tapir/silvercachy:latest
-  ```
-- Reboot to complete the rebase:
-  ```
+  bootc switch ghcr.io/tapir/silvercachy:latest
   systemctl reboot
   ```
 - Accept MOK key enrollment with password `scachy`
 - Then rebase to the signed image:
   ```
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/tapir/silvercachy:latest
-  ```
-- Reboot again to complete the installation
-  ```
+  bootc switch --enforce-container-signature ghcr.io/tapir/silvercachy:latest
   systemctl reboot
   ```
 - Enable `secureboot` back
