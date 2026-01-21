@@ -23,9 +23,9 @@ Kernel and the modules are signed with my MOK key which will be automatically en
   - `Ptyxis` flatpak (Terminal)
   - `kernel-cachyos-lto` kernel
   - `cachyos-settings`
-  - `gamemode`
   - `scx-scheds`
   - `scx-tools`
+  - `adw-gtk3-theme`
 
 `game-performance` script from `cachyos-settings` is removed due it's dependency on `power-profile-daemon`. Fedora uses `tuned` instead which looks like is the future. Also it's not easy to run `game-performance` from Steam's flatpak version. Just use `gamemoderun`. Should do the same trick.
 
