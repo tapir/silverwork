@@ -32,7 +32,7 @@ modules:
     install:
       skip-unavailable: true
       packages:
-        - gamemode
+        - adw-gtk3-theme
 
   # Minimal set of apps to be able to install other apps
   - type: default-flatpaks
