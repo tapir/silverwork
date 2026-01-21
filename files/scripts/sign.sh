@@ -42,24 +42,24 @@ find "$MODULE_ROOT" -type f \( \
 
     case "$mod" in
         *.ko)
-            "$SIGN_FILE" sha256 /tmp/certs/MOK.priv /usr/share/silvercachy/MOK.pem "$mod"
+            "$SIGN_FILE" sha256 /tmp/certs/MOK.priv /usr/share/silverwork/MOK.pem "$mod"
             ;;
         *.ko.xz)
             xz -d "$mod"
             raw="${mod%.xz}"
-            "$SIGN_FILE" sha256 /tmp/certs/MOK.priv /usr/share/silvercachy/MOK.pem "$raw"
+            "$SIGN_FILE" sha256 /tmp/certs/MOK.priv /usr/share/silverwork/MOK.pem "$raw"
             xz -z "$raw"
             ;;
         *.ko.zst)
             zstd -d --rm "$mod"
             raw="${mod%.zst}"
-            "$SIGN_FILE" sha256 /tmp/certs/MOK.priv /usr/share/silvercachy/MOK.pem "$raw"
+            "$SIGN_FILE" sha256 /tmp/certs/MOK.priv /usr/share/silverwork/MOK.pem "$raw"
             zstd -q "$raw"
             ;;
         *.ko.gz)
             gunzip "$mod"
             raw="${mod%.gz}"
-            "$SIGN_FILE" sha256 /tmp/certs/MOK.priv /usr/share/silvercachy/MOK.pem "$raw"
+            "$SIGN_FILE" sha256 /tmp/certs/MOK.priv /usr/share/silverwork/MOK.pem "$raw"
             gzip "$raw"
             ;;
     esac

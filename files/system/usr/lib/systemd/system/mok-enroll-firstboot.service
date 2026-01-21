@@ -1,15 +1,15 @@
 [Unit]
-Description=Enroll Silvercachy MOK on first boot
-ConditionPathExists=/usr/share/silvercachy/MOK.der
-ConditionPathExists=!/var/lib/silvercachy/.mok-enrolled
+Description=Enroll SilverWork MOK on first boot
+ConditionPathExists=/usr/share/silverwork/MOK.der
+ConditionPathExists=!/var/lib/silverwork/.mok-enrolled
 After=local-fs.target
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/bin/sh -c '(echo "scachy"; echo "scachy") | mokutil --import /usr/share/silvercachy/MOK.der'
-ExecStartPost=/usr/bin/mkdir -p /var/lib/silvercachy
-ExecStartPost=/usr/bin/touch /var/lib/silvercachy/.mok-enrolled
+ExecStart=/bin/sh -c '(echo "scachy"; echo "scachy") | mokutil --import /usr/share/silverwork/MOK.der'
+ExecStartPost=/usr/bin/mkdir -p /var/lib/silverwork
+ExecStartPost=/usr/bin/touch /var/lib/silverwork/.mok-enrolled
 
 [Install]
 WantedBy=multi-user.target

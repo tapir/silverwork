@@ -1,4 +1,4 @@
-# SilverCachy &nbsp; [![bluebuild build badge](https://github.com/tapir/silvercachy/actions/workflows/build.yml/badge.svg)](https://github.com/tapir/silvercachy/actions/workflows/build.yml)
+# SilverWork &nbsp; [![bluebuild build badge](https://github.com/tapir/silverwork/actions/workflows/build.yml/badge.svg)](https://github.com/tapir/silverwork/actions/workflows/build.yml)
 
 A `BlueBuild` image based on their `fedora-silverblue` image. It mainly adds the `CachyOS ThinLTO` kernel and builds `Nvidia` for it.
 Kernel and the modules are signed with my MOK key which will be automatically enrolled after the first boot. Use password `scachy` when asked.
@@ -35,7 +35,7 @@ Kernel and the modules are signed with my MOK key which will be automatically en
 - Disable `secureboot` from BIOS and boot to an atomic distro
 - Switch to the latest image
   ```
-  bootc switch ghcr.io/tapir/silvercachy:latest
+  bootc switch ghcr.io/tapir/silverwork:latest
   systemctl reboot
   ```
 - Accept MOK key enrollment with password `scachy`
@@ -48,5 +48,5 @@ The `latest` tag will automatically point to the latest build. That build will s
 These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
 
 ```bash
-cosign verify --key cosign.pub ghcr.io/tapir/silvercachy
+cosign verify --key cosign.pub ghcr.io/tapir/silverwork
 ```

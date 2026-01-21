@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: silvercachy
+name: silverwork
 description: Silverblue image based on BlueBuild's base images with CachyOS kernel and Nvidia
 base-image: ghcr.io/blue-build/base-images/fedora-silverblue
 image-version: 43
@@ -56,7 +56,7 @@ modules:
   # Sign kernel and modules recursively
   - type: script
     env:
-      CERT: /usr/share/silvercachy/MOK.pem
+      CERT: /usr/share/silverwork/MOK.pem
       KEY: /tmp/certs/MOK.priv
     secrets:
       - type: file
