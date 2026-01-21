@@ -47,6 +47,12 @@ modules:
   # CachyOS Addons
   - from-file: cachyos.yml
 
+  # Podman socket, needed for VSCode remote toolbox access
+  - type: systemd
+    system:
+      enabled:
+        - podman.socket
+
   # Firstboot MOK enroll
   - type: systemd
     system:
