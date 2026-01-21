@@ -20,7 +20,6 @@ modules:
     remove:
       auto-remove: false
       packages:
-        - akmods
         - kernel
         - kernel-core
         - kernel-modules
@@ -31,7 +30,6 @@ modules:
     install:
       skip-unavailable: true
       packages:
-        - akmods
         - kernel-cachyos-lto
         - kernel-cachyos-lto-core
         - kernel-cachyos-lto-modules

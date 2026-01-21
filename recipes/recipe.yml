@@ -46,9 +46,6 @@ modules:
 
   # CachyOS Addons
   - from-file: cachyos.yml
-  
-  # Nvidia modules and userspace
-  - from-file: nvidia.yml
 
   # Firstboot MOK enroll
   - type: systemd
