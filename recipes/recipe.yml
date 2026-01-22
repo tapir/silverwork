@@ -37,6 +37,7 @@ modules:
     install:
       skip-unavailable: true
       packages:
+        - dbus-daemon
         - adw-gtk3-theme
         - openvpn3
         - openvpn3-client
@@ -65,6 +66,12 @@ modules:
     system:
       enabled:
         - mok-enroll-firstboot.service
+
+  # Enable SCX
+  - type: systemd
+    system:
+      enabled:
+        - scx_loader.service
 
   # Sign kernel and modules recursively
   - type: script
