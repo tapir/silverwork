@@ -14,6 +14,10 @@ modules:
 
   # Minimal base image without extra GUI or CLI tools
   - type: dnf
+    repos:
+      cleanup: true
+      copr:
+        - sudo yum copr enable dsommers/openvpn3
     remove:
       auto-remove: true
       packages:
@@ -34,6 +38,7 @@ modules:
       skip-unavailable: true
       packages:
         - adw-gtk3-theme
+        - openvpn3-client
 
   # Minimal set of apps to be able to install other apps
   - type: default-flatpaks
