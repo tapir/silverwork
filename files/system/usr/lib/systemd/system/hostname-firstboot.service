@@ -1,0 +1,14 @@
+[Unit]
+Description=Set Static Hostname on First Boot
+ConditionPathExists=!/var/lib/silverwork/.hostname-set-once
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/hostnamectl set-hostname silverwork
+ExecStartPost=/usr/bin/mkdir -p /var/lib/silverwork
+ExecStartPost=/usr/bin/touch /var/lib/silverwork/.hostname-set-once
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

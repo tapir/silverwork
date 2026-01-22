@@ -54,6 +54,7 @@ modules:
     system:
       enabled:
         - podman.socket
+        - hostname-firstboot.service
         - mok-enroll-firstboot.service
         - scx_loader.service
 
@@ -75,5 +76,13 @@ modules:
   - type: script
     scripts:
       - initramfs.sh
+
+  # Set OS name
+  - type: os-release
+    properties:
+      ID: silverwork
+      ID_LIKE: fedora
+      NAME: SilverWork
+      PRETTY_NAME: SilverWork - Silverblue for Azerion HP ZBook G1A
 
   - type: signing
