@@ -14,10 +14,6 @@ modules:
 
   # Minimal base image without extra GUI or CLI tools
   - type: dnf
-    repos:
-      cleanup: true
-      copr:
-        - dsommers/openvpn3
     remove:
       auto-remove: true
       packages:
@@ -37,10 +33,7 @@ modules:
     install:
       skip-unavailable: true
       packages:
-        - dbus-daemon
         - adw-gtk3-theme
-        - openvpn3
-        - openvpn3-client
 
   # Minimal set of apps to be able to install other apps
   - type: default-flatpaks
