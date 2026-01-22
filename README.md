@@ -18,6 +18,7 @@ Kernel and the modules are signed with my MOK key which will be automatically en
   - `gnome-disk-utility`
   - `gnome-color-manager`
   - `yelp`
+  - `pipewire-config-raop`
 - Install:
   - `Bazaar` flatpak (App Store)
   - `Ptyxis` flatpak (Terminal)
@@ -26,8 +27,6 @@ Kernel and the modules are signed with my MOK key which will be automatically en
   - `scx-scheds`
   - `scx-tools`
   - `adw-gtk3-theme`
-
-`game-performance` script from `cachyos-settings` is removed due it's dependency on `power-profile-daemon`. Fedora uses `tuned` instead which looks like is the future. Also it's not easy to run `game-performance` from Steam's flatpak version. Just use `gamemoderun`. Should do the same trick.
 
 ## Installation
 

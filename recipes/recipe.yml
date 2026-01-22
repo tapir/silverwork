@@ -29,6 +29,7 @@ modules:
         - gnome-disk-utility
         - gnome-color-manager
         - yelp
+        - pipewire-config-raop
     install:
       skip-unavailable: true
       packages:
