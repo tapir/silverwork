@@ -30,6 +30,7 @@ modules:
         - gnome-color-manager
         - yelp
         - pipewire-config-raop
+        - gnome-shell-extension-background-logo
     install:
       skip-unavailable: true
       packages:
