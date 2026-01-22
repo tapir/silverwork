@@ -39,6 +39,7 @@ modules:
       skip-unavailable: true
       packages:
         - adw-gtk3-theme
+        - openvpn3
         - openvpn3-client
         - openvpn3-indicator
 
