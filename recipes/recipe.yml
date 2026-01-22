@@ -17,7 +17,8 @@ modules:
     repos:
       cleanup: true
       copr:
-        - sudo yum copr enable dsommers/openvpn3
+        - dsommers/openvpn3
+        - grzegorz-gutowski/openvpn3-indicator
     remove:
       auto-remove: true
       packages:
@@ -39,6 +40,7 @@ modules:
       packages:
         - adw-gtk3-theme
         - openvpn3-client
+        - openvpn3-indicator
 
   # Minimal set of apps to be able to install other apps
   - type: default-flatpaks
