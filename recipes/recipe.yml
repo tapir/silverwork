@@ -48,22 +48,12 @@ modules:
   # CachyOS Addons
   - from-file: cachyos.yml
 
-  # Podman socket, needed for VSCode remote toolbox access
+  # Services needed
   - type: systemd
     system:
       enabled:
         - podman.socket
-
-  # Firstboot MOK enroll
-  - type: systemd
-    system:
-      enabled:
         - mok-enroll-firstboot.service
-
-  # Enable SCX
-  - type: systemd
-    system:
-      enabled:
         - scx_loader.service
 
   # Sign kernel and modules recursively
