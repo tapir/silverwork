@@ -1,5 +1,5 @@
 [Unit]
-Description=Set Static Hostname on First Boot
+Description=Set static hostname on first boot
 ConditionPathExists=!/var/lib/silverwork/.hostname-set-once
 After=network.target
 

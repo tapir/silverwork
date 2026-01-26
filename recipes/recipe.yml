@@ -44,7 +44,14 @@ modules:
         install:
           - io.github.kolunmi.Bazaar
           - app.devsuite.Ptyxis
+          - org.gtk.Gtk3theme.adw-gtk3-dark
+          - org.gtk.Gtk3theme.adw-gtk3
       - scope: user
+
+  # AppIndicator and KStatusNotifierItem Support
+  - type: gnome-extensions
+    install:
+      - 615 
 
   # CachyOS Addons
   - from-file: cachyos.yml
@@ -54,6 +61,7 @@ modules:
     system:
       enabled:
         - podman.socket
+        - flatpak-settings-firstboot.service
         - hostname-firstboot.service
         - mok-enroll-firstboot.service
         - scx_loader.service
